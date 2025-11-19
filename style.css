@@ -11,14 +11,16 @@
         margin-block: 1rem;
       }
 
-      label,
       input {
         display: block;
         font-size: 1rem;
         font-family: inherit;
+        margin: 5px auto;
+        border: black, 1px, solid;
+        border-radius: 5px;
       }
 
-      h1 {
+      h1, form > p, th {
         text-align: center
       }
 
@@ -30,8 +32,4 @@
         text-align: center;
         font-size: 120%;
         font-weight: bold;
-      }
-
-      th {
-        text-align: center;
       }

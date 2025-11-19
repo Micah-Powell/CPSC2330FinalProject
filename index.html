@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <title>AU Pickleball Club</title>
     <link rel="stylesheet" href="style.css">
+    <script src="index.js" defer></script>
   </head>
 <body>
   <main>
       <h1>Anderson University Pickleball Club</h1>
-      
       <table>
         <caption>
         List of Pickleball Club Members
@@ -17,9 +17,14 @@
           <tr>
             <th>Name</th>
             <th>Email</th>
-            <th>Skill Level</th>
           </tr>
         </thead>
         <tbody></tbody>
       </table>
+      <form action="/addmember" method="POST">
+        <p>Add New Members</p>
+        <input type="text" name="name" placeholder="Enter New Member Name" required>
+        <input type="email" name="email" placeholder="Enter New Member Email" required>
+        <input type="button" name="submit" value="Submit">
+      </form>
 </body>
