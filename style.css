@@ -20,7 +20,7 @@
         border-radius: 5px;
       }
 
-      h1, form > p, th {
+      h1, form > p {
         text-align: center
       }
 
@@ -32,4 +32,13 @@
         text-align: center;
         font-size: 120%;
         font-weight: bold;
+      }
+
+      td, th{
+        text-align: left
+      }
+
+      .Delete {
+        border: black, 1px, solid;
+        border-radius: 5px;
       }
