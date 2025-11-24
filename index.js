@@ -15,12 +15,10 @@ function deletebutton(e) {
     const target = e.target
 
     const deletetarget = target.closest('TR')
-    console.log (target)
-    console.log (target.innerHTML)
-    console.log (deletetarget)
-    console.log (target.value == 'X')
-    if (target.innerHTML === '<button class="Delete">X</button>') {
-        document.querySelector('tbody').innerHTML.replace(deletetarget, "")
+
+    if (target.innerHTML === 'X') {
+        deletetarget.remove()
+
     }
 }
 
