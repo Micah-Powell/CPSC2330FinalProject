@@ -1,6 +1,5 @@
 from flask import Flask, send_from_directory
 from flask import request, jsonify
-from flask import render_template
 
 app = Flask(__name__, static_folder='site', static_url_path='')
 

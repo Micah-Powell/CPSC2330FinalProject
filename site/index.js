@@ -3,8 +3,6 @@
 const submitbutton = document.querySelector('[type="button"]')
 const tablebody = document.querySelector('tbody')
 
-console.log(submitbutton)
-console.log(tablebody)
 
 submitbutton.addEventListener("click", addbutton)
 tablebody.addEventListener("click", deletebutton)
@@ -18,8 +16,9 @@ function deletebutton(e) {
 
     if (target.innerHTML === 'X') {
         deletetarget.remove()
-
+        updatelist()
     }
+   
 }
 
 function addbutton() {
@@ -32,5 +31,17 @@ function addbutton() {
     document.querySelector('[type="email"]').value = ""
 
     document.querySelector('tbody').innerHTML += (`<tr><td>${name}</td><td>${email}</td><td><button class="Delete">X</button></td></tr>`)
-    
+    updatelist()
+}
+
+function updatelist() {
+    const results = []
+    for (let i = 0; i < tablebody.childNodes.length; i++) {
+        let row = tablebody.rows[i]
+        results.push(
+            {name: row.cells[0].textContent, email: row.cells[1].textContent}
+        )
+        
+    }
+    console.log(results)
 }
