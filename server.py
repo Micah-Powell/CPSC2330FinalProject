@@ -1,9 +1,13 @@
-from flask import Flask
-from flask import request
+from flask import Flask, send_from_directory
+from flask import request, jsonify
 from flask import render_template
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='site', static_url_path='')
 
-@app.route("/")
-def home():
-    return render_template("/index.html")
+@app.route('/')
+
+def page():
+      return send_from_directory('site', 'index.html')
+
+if __name__ == '__main__':
+    app.run(debug=True)
