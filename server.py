@@ -1,5 +1,7 @@
 from flask import Flask, send_from_directory
 from flask import request, jsonify
+import os
+import json
 
 app = Flask(__name__, static_folder='site', static_url_path='')
 
@@ -7,6 +9,17 @@ app = Flask(__name__, static_folder='site', static_url_path='')
 
 def page():
       return send_from_directory('site', 'index.html')
+
+@app.route('/data', methods=["POST"])
+
+def update():
+     datajson = request.get_json()
+     print ("hello")
+
+     with open("Member.json", "w") as f:
+          json.dump(datajson, f, indent=4)
+
+     return jsonify({"status": "ok"})
 
 if __name__ == '__main__':
     app.run(debug=True)

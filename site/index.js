@@ -1,5 +1,3 @@
-
-
 const submitbutton = document.querySelector('[type="button"]')
 const tablebody = document.querySelector('tbody')
 
@@ -43,5 +41,15 @@ function updatelist() {
         )
         
     }
-    console.log(results)
+    fetch("/data", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(results)
+        }
+    )
+    .then(response => response.json())
+    .then(result => {
+    console.log("Server responded:", result);
+    })
+
 }
