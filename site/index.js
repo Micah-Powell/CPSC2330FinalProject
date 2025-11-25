@@ -53,3 +53,23 @@ function updatelist() {
     })
 
 }
+
+function pageload() {
+    fetch("/start", {
+        methaod: "GET",
+        headers: { "Content-Type": "application/json" },
+        }
+    )
+    .then(response => response.json())
+    .then(result => {
+        console.log("Server responded:", result);
+    
+        result.forEach(e => {
+            document.querySelector('[type="text"]').value = e.name
+            document.querySelector('[type="email"]').value = e.email
+            addbutton()
+        });
+    });
+}
+
+window.onload = pageload()

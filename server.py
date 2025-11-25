@@ -13,13 +13,22 @@ def page():
 @app.route('/data', methods=["POST"])
 
 def update():
-     datajson = request.get_json()
-     print ("hello")
+    datajson = request.get_json()
 
-     with open("Member.json", "w") as f:
-          json.dump(datajson, f, indent=4)
+    with open("Member.json", "w") as f:
+        json.dump(datajson, f, indent=4)
 
-     return jsonify({"status": "ok"})
+    return jsonify({"status": "ok"})
+
+@app.route('/start', methods=["GET"])
+
+def read():
+
+    with open("Member.json", "r") as f:
+        data = json.load(f)
+        
+    return data
+
 
 if __name__ == '__main__':
     app.run(debug=True)
