@@ -1,4 +1,4 @@
-:root {
+      body {
         max-width: 800px;
         margin: 0 auto;
         font-size: 24px;
@@ -7,8 +7,24 @@
         background-color: #ffffff;
       }
 
-      main > * {
-        margin-block: 1rem;
+      main {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      h1 {
+        grid-column: span 1;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        grid-column: span 1;
+        object-fit: contain;
+      }
+
+      table, form {
+        grid-column: span 2;
       }
 
       input {
@@ -16,7 +32,7 @@
         font-size: 1rem;
         font-family: inherit;
         margin: 5px auto;
-        border: black, 1px, solid;
+        border: 1px solid black;
         border-radius: 5px;
       }
 
@@ -39,6 +55,6 @@
       }
 
       .Delete {
-        border: black, 1px, solid;
+        border: 1px solid black;
         border-radius: 5px;
       }
